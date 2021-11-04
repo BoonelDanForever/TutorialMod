@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "tutorialmod:block/first_def_block" }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "sps",
+    "sxs",
+    "hoa"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "tutorialmod:example_block"
+    },
+    "s":
+    {
+      "item": "minecraft:cobblestone"
+    },
+    "p":
+    {
+      "item": "tutorialmod:example_pickaxe"
+    },
+    "h":
+    {
+      "item": "tutorialmod:example_shovel"
+    },
+    "o":
+    {
+      "item": "minecraft:obsidian"
+    },
+    "a":
+    {
+      "item": "tutorialmod:example_axe"
+    }
+  },
+  "result":
+  {
+    "item": "tutorialmod:quarry",
+    "count": 2
+  }
+}
