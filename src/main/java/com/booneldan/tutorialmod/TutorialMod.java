@@ -1,9 +1,6 @@
 package com.booneldan.tutorialmod;
 
-import com.booneldan.tutorialmod.init.BlockInit;
-import com.booneldan.tutorialmod.init.ModTileEntityTypes;
-import com.booneldan.tutorialmod.init.NewBlockInit;
-import com.booneldan.tutorialmod.init.NewItemInit;
+import com.booneldan.tutorialmod.init.*;
 import com.booneldan.tutorialmod.world.gen.ModOreGen;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -49,6 +46,8 @@ public class TutorialMod  {
         NewItemInit.ITEMS.register(modEventBus);
         NewBlockInit.BLOCKS.register(modEventBus);
         ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+
+        ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

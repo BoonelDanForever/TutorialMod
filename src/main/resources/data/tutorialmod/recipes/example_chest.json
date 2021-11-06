@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "x x",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "tutorialmod:example_block"
+    }
+  },
+  "result":
+  {
+    "item": "tutorialmod:example_chest",
+    "count": 1
+  }
+}
