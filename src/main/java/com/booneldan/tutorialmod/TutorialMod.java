@@ -9,6 +9,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -34,6 +39,7 @@ public class TutorialMod  {
     public static final String MOD_ID = "tutorialmod";
     public static TutorialMod instance;
 
+
     public TutorialMod() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -55,7 +61,7 @@ public class TutorialMod  {
          NewBlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
              final Item.Properties properties = new Item.Properties().tab(TutorialItemGroup.instance);
              final BlockItem blockItem = new BlockItem(block, properties);
-             blockItem.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
+             blockItem.setRegistryName(block.getRegistryName());
              registry.register(blockItem);
         });
          LOGGER.debug("Registered BlockItems!");

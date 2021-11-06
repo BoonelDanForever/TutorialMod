@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tutorialmod:example_block"
+    }
+  ],
+  "result":
+  {
+    "item": "tutorialmod:example_button",
+    "count": 1
+  }
+}

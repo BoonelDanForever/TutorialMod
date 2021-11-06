@@ -36,7 +36,7 @@ public class BlockInit {
 
     @SubscribeEvent
     public static void RegisterBlockItems(final RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new BlockItem(                    example_block, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_block"));
+        event.getRegistry().register(new BlockItem(example_block, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_block"));
         event.getRegistry().register(new BlockItem(example_ore, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_ore"));
         event.getRegistry().register(new BlockItem(quarry, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("quarry"));
 

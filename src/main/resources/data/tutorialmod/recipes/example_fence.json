@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xax",
+    "xax"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "tutorialmod:example_item"
+    },
+    "a":
+    {
+      "item": "tutorialmod:first_def_item"
+    }
+  },
+  "result":
+  {
+    "item": "tutorialmod:example_fence",
+    "count": 3
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "x",
+    "xx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "tutorialmod:example_block"
+    }
+  },
+  "result":
+  {
+    "item": "tutorialmod:example_stairs",
+    "count": 4
+  }
+}
