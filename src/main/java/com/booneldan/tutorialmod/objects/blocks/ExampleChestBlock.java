@@ -45,8 +45,6 @@ public class ExampleChestBlock extends Block {
 		return ActionResultType.FAIL;
 	}
 
-
-
 	@Override
 	public void onRemove(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {

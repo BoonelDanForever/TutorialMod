@@ -12,6 +12,10 @@
   "item.tutorialmod.example_leggings": "Example Leggings",
   "item.tutorialmod.example_boots": "Example Boots",
   "block.tutorialmod.example_block": "Example Block",
+  "block.tutorialmod.example_log": "Example Log",
+  "block.tutorialmod.example_stripped_log": "Example Stripped Log",
+  "block.tutorialmod.example_leaves": "Example Leaves",
+  "block.tutorialmod.example_sapling": "Example Sapling",
   "block.tutorialmod.quarry": "Quarry",
   "block.tutorialmod.first_def_block": "First DeferredRegister Block",
   "block.tutorialmod.example_ore": "Example Ore",
@@ -21,5 +25,6 @@
   "block.tutorialmod.example_pressure_plate": "Example Pressure Plate",
   "block.tutorialmod.example_chest": "Example Chest",
   "container.example_chest": "Example Chest",
-  "itemGroup.tutorialtab": "Tutorial Tab"
+  "itemGroup.tutorialtab": "Tutorial Tab",
+  "entity.tutorialmod.example": "Example Entity"
 }

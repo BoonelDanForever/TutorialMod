@@ -1,7 +1,6 @@
 package com.booneldan.tutorialmod.tileentity;
 
 import com.booneldan.tutorialmod.container.ExampleChestContainer;
-import com.booneldan.tutorialmod.init.BlockInit;
 import com.booneldan.tutorialmod.init.ModTileEntityTypes;
 import com.booneldan.tutorialmod.objects.blocks.ExampleChestBlock;
 import net.minecraft.block.Block;

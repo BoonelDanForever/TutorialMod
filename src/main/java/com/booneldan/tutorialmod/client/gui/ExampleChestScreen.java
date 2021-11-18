@@ -25,9 +25,6 @@ public class ExampleChestScreen extends ContainerScreen<ExampleChestContainer> {
         this.titleLabelY = 6;
     }
 
-
-
-
     public void render(MatrixStack matrixStack, final int mouseX, final int mouseY, final float partialTicks) {
         this.renderBackground(matrixStack);
         super.render(matrixStack, mouseX, mouseY, partialTicks);
@@ -42,6 +39,4 @@ public class ExampleChestScreen extends ContainerScreen<ExampleChestContainer> {
         int y = (this.height - this.imageHeight) / 2;
         this.blit(p_230450_1_, x, y, 0, 0, this.imageWidth, this.imageHeight);
     }
-
-
 }

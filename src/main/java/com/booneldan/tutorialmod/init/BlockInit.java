@@ -2,7 +2,6 @@ package com.booneldan.tutorialmod.init;
 
 import com.booneldan.tutorialmod.TutorialMod;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
@@ -13,7 +12,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
 
-import java.util.function.ToIntFunction;
 
 @Mod.EventBusSubscriber(modid = TutorialMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(TutorialMod.MOD_ID)
@@ -29,10 +27,7 @@ public class BlockInit {
         event.getRegistry().register(new Block(Block.Properties.of(Material.METAL).harvestLevel(-1).instabreak().sound(SoundType.METAL).lightLevel(value -> 14)).setRegistryName("example_block"));
         event.getRegistry().register(new Block(Block.Properties.of(Material.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)).setRegistryName("example_ore"));
         event.getRegistry().register(new Block(Block.Properties.of(Material.METAL)).setRegistryName("quarry"));
-
     }
-
-
 
     @SubscribeEvent
     public static void RegisterBlockItems(final RegistryEvent.Register<Item> event) {
@@ -41,5 +36,4 @@ public class BlockInit {
         event.getRegistry().register(new BlockItem(quarry, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("quarry"));
 
     }
-
 }

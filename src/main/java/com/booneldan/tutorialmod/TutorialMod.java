@@ -1,32 +1,31 @@
 package com.booneldan.tutorialmod;
 
+import com.booneldan.tutorialmod.entity.ExampleEntity;
 import com.booneldan.tutorialmod.init.*;
+import com.booneldan.tutorialmod.util.StrippingMap;
 import com.booneldan.tutorialmod.world.gen.ModOreGen;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Objects;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("tutorialmod")
@@ -41,8 +40,10 @@ public class TutorialMod  {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::onLoadComplete);
         modEventBus.addListener(this::doClientStuff);
 
+        EntityTypesInit.ENTITY_TYPES.register(modEventBus);
         NewItemInit.ITEMS.register(modEventBus);
         NewBlockInit.BLOCKS.register(modEventBus);
         ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
@@ -66,8 +67,11 @@ public class TutorialMod  {
          LOGGER.debug("Registered BlockItems!");
     }
 
+    @SuppressWarnings("deprecation")
     private void setup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ModOreGen::generateOres);
+
+        DeferredWorkQueue.runLater(() -> {GlobalEntityTypeAttributes.put(EntityTypesInit.EXAMPLE.get(), ExampleEntity.setAttributes().build());});
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {}
@@ -87,5 +91,9 @@ public class TutorialMod  {
         public ItemStack makeIcon() {
             return new ItemStack(BlockInit.example_block);
         }
+    }
+
+    public void onLoadComplete(final FMLLoadCompleteEvent event) {
+        StrippingMap.registerStripables();
     }
 }

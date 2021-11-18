@@ -20,7 +20,6 @@ import net.minecraftforge.registries.ObjectHolder;
 import java.util.function.Supplier;
 
 
-
 @Mod.EventBusSubscriber(modid = TutorialMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(TutorialMod.MOD_ID)
 public class ItemInit {
@@ -44,8 +43,6 @@ public class ItemInit {
     public static final Item example_boots = null;
 
 
-
-
     @SubscribeEvent
     public static void RegisterItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new Item(new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_item"));
@@ -63,7 +60,6 @@ public class ItemInit {
         event.getRegistry().register(new ArmorItem(ModArmorMaterial.EXAMPLE, EquipmentSlotType.CHEST, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_chestplate"));
         event.getRegistry().register(new ArmorItem(ModArmorMaterial.EXAMPLE, EquipmentSlotType.LEGS, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_leggings"));
         event.getRegistry().register(new ArmorItem(ModArmorMaterial.EXAMPLE, EquipmentSlotType.FEET, new Item.Properties().tab(TutorialMod.TutorialItemGroup.instance)).setRegistryName("example_boots"));
-
     }
 
     public enum ModItemTier implements IItemTier {
